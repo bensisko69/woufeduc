@@ -1,0 +1,34 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block body %}
+<div class="col-lg-12">
+	<div class=" col-lg-6" style="border: solid black; height: 350px">
+		<h4>Education Canine</h4>
+	{% for Text in obj %}
+		<p>
+			{{ Text.left }}
+		</p>
+	</div>
+	<div class="col-lg-6" style="border: solid black; height: 350px">
+		<h4>Rééducation Comportementale</h4>
+		<p>
+			{{ Text.right }}
+		</p>
+	</div>
+	<div class="col-lg-12">
+		<!-- <div class="col-lg-3"> -->
+			<img src="{% static "img/img1.jpg" %}" alt="chien" class="img-thumbnail">
+		<!-- </div> -->
+		<div class="col-lg-3">
+			<img src="{% static "img/img2.jpg" %}" alt="chien" class="img-thumbnail">
+		</div>
+		<div class="col-lg-3">
+			<img src="{% static "img/img3.jpg" %}" alt="chien" class="img-thumbnail">
+		</div>
+		<div class="col-lg-3">
+			<img src="{% static "img/img4.jpg" %}" alt="chien" class="img-thumbnail">
+		</div>
+	{% endfor %}
+</div>
+{% endblock body %}
