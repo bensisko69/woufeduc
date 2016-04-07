@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
 
@@ -120,11 +120,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+ 
+STATIC_ROOT = (
+        os.path.join(os.path.dirname(BASE_DIR), "static")
+    )
 
-STATIC_ROOT =  'main/static/'
+MEDIA_URL = '/media/'
 
-
+EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'loicrg69@gmail.com'
 EMAIL_HOST_PASSWORD = 'Loicrg691986'
-EMAIL_PORT = 465
+EMAIL_FILE_PATH =''
+EMAIL_PORT = 587

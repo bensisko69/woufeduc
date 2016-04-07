@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.forms import forms
 from django.core.mail import send_mail
 
-from .forms import ContactForm
-from .models import Text, Tarif
+from .forms import ContactForm, TemoignageForm
+from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Text
 
-def accueil(request):
-	obj = Text.objects.filter(page='acceuil')
-	return render(request, 'main/acceuil.html', {'obj':obj})
+def presentation(request):
+	obj = Presentation.objects.all
+	return render(request, 'main/presentation.html', {'obj':obj})
 
 def contact(request):
 	if request.method == 'POST':
@@ -20,13 +20,37 @@ def contact(request):
 
 	return render(request, 'main/contact.html', {'form':form})
 
-def presentation(request):
-	return render(request, 'main/presentation.html')
-
 def education(request):
 	obj = Text.objects.filter(page='education')
 	return render(request, 'main/education.html', {'obj':obj})
 
+def reeducation(request):
+	obj = Text.objects.filter(page='reeducation')
+	return render(request, 'main/reeducation.html', {'obj':obj})
+
+def promenades(request):
+	obj = Text.objects.filter(page='promenades')
+	return render(request, 'main/promenades.html', {'obj':obj})
+
 def tarifs(request):
 	obj = Tarif.objects.all()
 	return render(request, 'main/tarifs.html', {'obj':obj})
+
+def temoignage(request):
+	obj = Temoignage.objects.filter(validate=True)
+	if request.method == 'POST':
+		form = TemoignageForm(request.POST, request.FILES)
+		if form.is_valid():
+			form.save()
+			return render(request, 'main/temoignage.html')
+	else:
+		form = TemoignageForm()
+	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
+
+def gallery(request):
+	obj = Gallery.objects.all()
+	return render(request, 'main/gallery.html', {'obj':obj})
+
+def partenaires(request):
+	obj = Partenaires.objects.all()
+	return render(request, 'main/partenaires.html', {'obj':obj})
