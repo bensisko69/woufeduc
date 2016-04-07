@@ -75,7 +75,7 @@ class Gallery(models.Model):
 	def __unicode__(self):
 		return self.nom
 
-class Text(models.Model):
+class Service(models.Model):
 	page = models.CharField(choices=NAME_PAGE, max_length=100)
 	left = models.CharField(max_length=900)
 	right = models.CharField(max_length=900)
@@ -87,3 +87,6 @@ class Text(models.Model):
 
 	def __unicode__(self):
 		return self.page
+
+class MyModel(models.Model):
+	content = MarkdownField()

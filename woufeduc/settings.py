@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django_markdown',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -49,6 +52,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'woufeduc.urls'
@@ -133,3 +137,6 @@ EMAIL_HOST_USER = 'loicrg69@gmail.com'
 EMAIL_HOST_PASSWORD = 'Loicrg691986'
 EMAIL_FILE_PATH =''
 EMAIL_PORT = 587
+
+# Markdown
+MARKDOWN_EDITOR_SKIN = 'simple'

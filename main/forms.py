@@ -1,6 +1,8 @@
 from django.forms import ModelForm, Textarea
-
-from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Text
+from django_markdown.fields import MarkdownFormField
+from django_markdown.widgets import MarkdownWidget
+from django import forms
+from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service
 
 class ContactForm(ModelForm):
 	class Meta:
@@ -44,12 +46,19 @@ class GalleryForm(ModelForm):
 	class Meta:
 		model = Gallery
 		fields = '__all__'
+		widgets = {
+			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
+		}
 
-class TextForm(ModelForm):
+class ServiceForm(ModelForm):
 	class Meta:
-		model = Text
+		model = Service
 		fields = '__all__'
 		widgets = {
 			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
 			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
+
+class MyCustomForm(forms.Form):
+	content = forms.CharField(widget=MarkdownWidget())
+	content2 = MarkdownFormField()

@@ -3,7 +3,7 @@ from django.forms import forms
 from django.core.mail import send_mail
 
 from .forms import ContactForm, TemoignageForm
-from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Text
+from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service
 
 def presentation(request):
 	obj = Presentation.objects.all
@@ -21,15 +21,15 @@ def contact(request):
 	return render(request, 'main/contact.html', {'form':form})
 
 def education(request):
-	obj = Text.objects.filter(page='education')
+	obj = Service.objects.filter(page='education')
 	return render(request, 'main/education.html', {'obj':obj})
 
 def reeducation(request):
-	obj = Text.objects.filter(page='reeducation')
+	obj = Service.objects.filter(page='reeducation')
 	return render(request, 'main/reeducation.html', {'obj':obj})
 
 def promenades(request):
-	obj = Text.objects.filter(page='promenades')
+	obj = Service.objects.filter(page='promenades')
 	return render(request, 'main/promenades.html', {'obj':obj})
 
 def tarifs(request):

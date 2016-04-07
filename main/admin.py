@@ -1,8 +1,9 @@
 from django.contrib import admin
 from django.db import models
+from django_markdown.admin import MarkdownModelAdmin
 
-from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Text
-from .forms import ContactForm, PresentationForm, TarifForm, TemoignageForm, PartenairesForm, GalleryForm, TextForm
+from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, MyModel
+from .forms import ContactForm, PresentationForm, TarifForm, TemoignageForm, PartenairesForm, GalleryForm, ServiceForm
 
 class ContactAdmin(admin.ModelAdmin):
 	form = ContactForm
@@ -26,8 +27,8 @@ class GalleryAdmin(admin.ModelAdmin):
 	form = GalleryForm
 
 
-class TextAdmin(admin.ModelAdmin):
-	form = TextForm
+class ServiceAdmin(admin.ModelAdmin):
+	form = ServiceForm
 
 admin.site.register(Temoignage, TemoignageForm)
 admin.site.register(Contact, ContactAdmin)
@@ -35,4 +36,5 @@ admin.site.register(Presentation, PresentationAdmin)
 admin.site.register(Tarif, TarifAdmin)
 admin.site.register(Partenaires, PartenairesfAdmin)
 admin.site.register(Gallery, GalleryAdmin)
-admin.site.register(Text, TextAdmin)
+admin.site.register(Service, ServiceAdmin)
+admin.site.register(MyModel, MarkdownModelAdmin)

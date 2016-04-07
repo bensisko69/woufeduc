@@ -1,0 +1,9 @@
+{% extends "main/base.html" %}
+{% block body %}
+{% load django_markdown %}
+{% for Service in obj %}
+<div class="col-xs-2" style="border: solid black">
+	{{ Service.left|markdown }} <br>
+</div>
+{% endfor %}
+{% endblock body %}
