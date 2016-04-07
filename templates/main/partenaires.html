@@ -1,0 +1,14 @@
+{% extends "main/base.html" %}
+<!-- {% load staticfiles %} -->
+
+{% block body %}
+<h1>Nos partenaires</h1>
+{% for partenaire in obj %}
+<div class="col-xs-2" style="border: solid black">
+	{{ partenaire.nom }} <br>
+	<a href= {{ partenaire.lien }}>
+		<img src= {{ partenaire.file.url }} style="max-width: 100%">
+	</a>
+</div>
+{% endfor %}
+{% endblock body %}

@@ -1,0 +1,12 @@
+{% extends "main/base.html" %}
+
+{% block body %}
+<div class="col-xs-12">
+{% for Gallery in obj %}
+	<div class="col-xs-4" style="border: solid black">
+			<img class="img-rounded" src= {{ Gallery.file.url }} style="max-width: 100%; margin-top: 20px"><br><br>
+			<p style=" word-wrap: break-word;">{{ Gallery.text }}</p>
+	</div>
+{% endfor %}
+</div>
+{% endblock body %}
