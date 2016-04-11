@@ -29,7 +29,7 @@ def reeducation(request):
 	return render(request, 'main/reeducation.html', {'obj':obj})
 
 def promenades(request):
-	obj = Service.objects.filter(page='promenades')
+	obj = Service.objects.filter(page='promenade')
 	return render(request, 'main/promenades.html', {'obj':obj})
 
 def tarifs(request):

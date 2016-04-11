@@ -66,7 +66,7 @@ class Partenaires(models.Model):
 
 class Gallery(models.Model):
 	nom = models.CharField(max_length=100)
-	file = models.ImageField(upload_to='main/static/gallery/')
+	file = models.ImageField(upload_to='media/main/img/temoignage')
 	text = models.CharField(max_length=250)
 
 	def __str__(self):
