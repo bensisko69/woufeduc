@@ -2,8 +2,17 @@
 {% block body %}
 {% load django_markdown %}
 {% for Service in obj %}
-<div class="col-xs-2" style="border: solid black">
-	{{ Service.left|markdown }} <br>
+<div class="col-xs-6" style="border: solid black">
+  {{ Service.left|markdown }}
+</div>
+<div class="col-xs-6" style="border: solid black">
+  <img src= {{ Service.file1.url }} style="max-width: 100%;">
+</div>
+<div class="col-xs-6" style="border: solid black">
+  {{ Service.right|markdown }}
+</div>
+<div class="col-xs-6" style="border: solid black">
+  <img src= {{ Service.file2.url }} style="max-width: 100%;">
 </div>
 {% endfor %}
 {% endblock body %}
