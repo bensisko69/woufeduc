@@ -17,6 +17,7 @@ class TarifAdmin(admin.ModelAdmin):
 
 class TemoignageAdmin(admin.ModelAdmin):
 	model = Temoignage
+	list_display = ('nom', 'validate')
 	list_filter = ['validate']
 
 class PartenairesfAdmin(admin.ModelAdmin):
