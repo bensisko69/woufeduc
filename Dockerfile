@@ -8,7 +8,7 @@ RUN pip install\
 	django-markdown\
 	django-bootstrap-form
 
-COPY ./ /app
+ADD ./ /app
 WORKDIR /app
 
 CMD ["python", "manage.py", "runserver", "0.0.0.0:9999"]
