@@ -1,7 +1,9 @@
 {% extends "main/base.html" %}
 {% block body %}
 {% load django_markdown %}
-<h1>Nos partenaires</h1>
+<div class="col-xs-12">
+  <h1 style="text-align: center;">Nos partenaires</h1>
+</div>
 {% for partenaire in obj %}
 <div class="col-xs-2" style="border: solid black">
 	<p style="text-align: center;">{{ partenaire.nom|markdown }} </p>
