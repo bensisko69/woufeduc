@@ -2,7 +2,7 @@ from django.forms import ModelForm, Textarea
 from django_markdown.fields import MarkdownFormField
 from django_markdown.widgets import MarkdownWidget
 from django import forms
-from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service
+from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
 
 class ContactForm(ModelForm):
 	class Meta:
