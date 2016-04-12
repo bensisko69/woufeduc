@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_markdown',
+    'bootstrapform',
 ]
 
 MIDDLEWARE_CLASSES = [
