@@ -7,7 +7,7 @@ from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Galle
 class ContactForm(ModelForm):
 	class Meta:
 		model = Contact
-		fields = '__all__'
+		exclude = ('validate',)
 		widgets = {
 			'question' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}

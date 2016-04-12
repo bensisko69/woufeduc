@@ -1,13 +1,12 @@
 from django.contrib import admin
 from django.db import models
 from django_markdown.admin import MarkdownModelAdmin
-from django.forms import Textarea
 
 from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, MyModel, Mention
 from .forms import ContactForm, PresentationForm, TarifForm, PartenairesForm, GalleryForm, ServiceForm, MentionForm
 
 class ContactAdmin(admin.ModelAdmin):
-	form = ContactForm
+	model = Form
 	list_display = ('nom', 'codePostal', 'telephone')
 	list_filter = ['validate']
 
@@ -31,11 +30,7 @@ class ServiceAdmin(admin.ModelAdmin):
 	form = ServiceForm
 
 class MentionAdmin(admin.ModelAdmin):
-	class Meta:
-		model = Mention
-		widgets = {
-			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
-			}
+	form = MentionForm
 
 admin.site.register(Temoignage, TemoignageAdmin)
 admin.site.register(Contact, ContactAdmin)
