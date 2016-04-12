@@ -15,7 +15,7 @@
 			<p style=" word-wrap: break-word;" >{{ Temoignage.nom }}</p>
 			<p style=" word-wrap: break-word;" >{{ Temoignage.comment }}</p>
 			{% if Temoignage.file %}
-				<img src={{ Temoignage.file.url }} style="max-width: 100%;">
+				<img src={{ Temoignage.file.url }} style="max-width: 100%; display: block; margin-left: auto; margin-right: auto">
 			{% endif %}
 	</div>
 {% endfor %}
