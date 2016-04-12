@@ -90,3 +90,6 @@ class Service(models.Model):
 
 class MyModel(models.Model):
 	content = MarkdownField()
+
+class Mention(models.Model):
+	text = models.CharField(max_length=1000)
