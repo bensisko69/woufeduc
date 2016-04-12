@@ -8,9 +8,9 @@
 	</form>
 </div>
 <div class="col-xs-12">
-<h1>Retrouver les temoignages de nos clients</h1>
+<h1 style="text-align: center;">Retrouver les temoignages de nos clients</h1>
 {% for Temoignage in obj %}
-	<div class="col-xs-4" style="border: solid black; height: 100%; margin: 5px">
+	<div class="col-xs-4" style="border: solid black; height: 100%; margin: 1px">
 			<h4 style="text-align: center;">{{ Temoignage.titre }}</h4>
 			<p style=" word-wrap: break-word;" >{{ Temoignage.nom }}</p>
 			<p style=" word-wrap: break-word;" >{{ Temoignage.comment }}</p>
