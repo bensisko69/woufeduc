@@ -7,6 +7,7 @@
 	<input type="submit" value="Submit" />
 	</form>
 </div>
+<div class="col-xs-12">
 <h1>Retrouver les temoignages de nos clients</h1>
 {% for Temoignage in obj %}
 	<div class="col-xs-4" style="border: solid black; height: 100%">
@@ -17,5 +18,6 @@
 				<img src={{ Temoignage.file.url }} style="max-width: 100%;">
 			{% endif %}
 	</div>
+</div>
 {% endfor %}
 {% endblock body %}
