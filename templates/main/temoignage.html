@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block body %}
-<div class="col-xs-12">
+<div class="col-lg-offset-4 col-xs-6">
 	<form method="post">
 		{% csrf_token %}
 		{{ form.as_p }}
