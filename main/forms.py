@@ -12,14 +12,14 @@ class ContactForm(ModelForm):
 			'question' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
 
-class PresentationForm(ModelForm):
-	class Meta:
-		model = Presentation
-		fields = '__all__'
-		widgets = {
-			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
-			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
-		}
+# class PresentationForm(ModelForm):
+# 	class Meta:
+# 		model = Presentation
+# 		fields = '__all__'
+# 		widgets = {
+# 			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
+# 			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
+# 		}
 
 class TarifForm(ModelForm):
 	class Meta:

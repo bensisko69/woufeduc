@@ -3,7 +3,7 @@ from django.db import models
 from django_markdown.admin import MarkdownModelAdmin
 
 from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, MyModel, Mention
-from .forms import ContactForm, PresentationForm, TarifForm, PartenairesForm, GalleryForm, ServiceForm, MentionForm
+from .forms import ContactForm, PresentationForm, TarifForm, GalleryForm, ServiceForm, MentionForm
 
 class ContactAdmin(admin.ModelAdmin):
 	model = Contact
@@ -11,7 +11,7 @@ class ContactAdmin(admin.ModelAdmin):
 	list_filter = ['validate']
 
 class PresentationAdmin(admin.ModelAdmin):
-	form = PresentationForm
+	model = Presentation
 
 class TarifAdmin(admin.ModelAdmin):
 	form = TarifForm
