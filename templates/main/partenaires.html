@@ -4,7 +4,7 @@
 <h1>Nos partenaires</h1>
 {% for partenaire in obj %}
 <div class="col-xs-2" style="border: solid black">
-	{{ partenaire.nom|markdown }} <br>
+	<p style="text-align: center;">{{ partenaire.nom|markdown }} </p>
 	<a href= {{ partenaire.lien }}>
 		<img src= {{ partenaire.file.url }} style="max-width: 100%; display: block; margin-left: auto; margin-right: auto">
 	</a>
