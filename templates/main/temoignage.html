@@ -13,7 +13,9 @@
 			<h4>{{ Temoignage.titre }}</h4>
 			<p style=" word-wrap: break-word;" >{{ Temoignage.nom }}</p>
 			<p style=" word-wrap: break-word;" >{{ Temoignage.comment }}</p>
-			<img src={% if Temoignage.file %}{{ Temoignage.file.url }}{% endif %} style="max-width: 100%;">
+			{% if Temoignage.file %}
+				<img src={{ Temoignage.file.url }} style="max-width: 100%;">
+			{% endif %}
 	</div>
 {% endfor %}
 {% endblock body %}
