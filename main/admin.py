@@ -3,7 +3,7 @@ from django.db import models
 from django_markdown.admin import MarkdownModelAdmin
 
 from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, MyModel, Mention
-from .forms import ContactForm, TarifForm, GalleryForm, ServiceForm, MentionForm, PartenairesForm
+from .forms import ContactForm, TarifForm, GalleryForm, MentionForm, PartenairesForm
 
 class ContactAdmin(admin.ModelAdmin):
 	model = Contact
@@ -27,7 +27,7 @@ class GalleryAdmin(admin.ModelAdmin):
 	form = GalleryForm
 
 class ServiceAdmin(admin.ModelAdmin):
-	form = ServiceForm
+	model = Service
 
 class MentionAdmin(admin.ModelAdmin):
 	form = MentionForm
