@@ -2,7 +2,7 @@ from django.forms import ModelForm, Textarea
 from django_markdown.fields import MarkdownFormField
 from django_markdown.widgets import MarkdownWidget
 from django import forms
-from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
+from .models import Contact, Tarif, Temoignage, Partenaires, Gallery, Mention
 
 class ContactForm(ModelForm):
 	class Meta:
@@ -11,15 +11,6 @@ class ContactForm(ModelForm):
 		widgets = {
 			'question' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
-
-# class PresentationForm(ModelForm):
-# 	class Meta:
-# 		model = Presentation
-# 		fields = '__all__'
-# 		widgets = {
-# 			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
-# 			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
-# 		}
 
 class TarifForm(ModelForm):
 	class Meta:
@@ -50,14 +41,14 @@ class GalleryForm(ModelForm):
 			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
 
-class ServiceForm(ModelForm):
-	class Meta:
-		model = Service
-		fields = '__all__'
-		widgets = {
-			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
-			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
-		}
+# class ServiceForm(ModelForm):
+# 	class Meta:
+# 		model = Service
+# 		fields = '__all__'
+# 		widgets = {
+# 			'left' : Textarea(attrs={'cols': 60, 'rows': 10}),
+# 			'right' : Textarea(attrs={'cols': 60, 'rows': 10}),
+# 		}
 
 class MyCustomForm(forms.Form):
 	content = forms.CharField(widget=MarkdownWidget())
