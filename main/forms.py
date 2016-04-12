@@ -2,7 +2,7 @@ from django.forms import ModelForm, Textarea
 from django_markdown.fields import MarkdownFormField
 from django_markdown.widgets import MarkdownWidget
 from django import forms
-from .models import Contact, Tarif, Temoignage, Mention
+from .models import Contact, Temoignage
 
 class ContactForm(ModelForm):
 	class Meta:
@@ -12,18 +12,10 @@ class ContactForm(ModelForm):
 			'question' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
 
-class TarifForm(ModelForm):
-	class Meta:
-		model = Tarif
-		fields = '__all__'
-		widgets = {
-			'detail' : Textarea(attrs={'cols': 60, 'rows': 10}),
-		}
-
 class TemoignageForm(ModelForm):
 	class Meta:
 		model = Temoignage
-		exclude = ('validate',)
+		exclude = ('validate', 'file')
 		widgets = {
 			'comment' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
@@ -31,11 +23,3 @@ class TemoignageForm(ModelForm):
 class MyCustomForm(forms.Form):
 	content = forms.CharField(widget=MarkdownWidget())
 	content2 = MarkdownFormField()
-
-class MentionForm(ModelForm):
-	class Meta:
-		model = Mention
-		fields = '__all__'
-		widgets = {
-			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
-		}
