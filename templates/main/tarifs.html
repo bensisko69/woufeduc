@@ -3,11 +3,11 @@
 {% load django_markdown %}
 {% block body %}
 {% for Tarif in obj %}
-<div class="col-lg-6" style="border: solid black; min-height: 740px;" >
-	{{ Tarif.titre|markdown }}
-	{{ Tarif.detail|markdown }}
-	{{ Tarif.prix|markdown }}
-	<img src="{{Tarif.file.url}}"  class="img-thumbnail">
+<div class="col-lg-6" style="border: solid black" >
+	<p>{{ Tarif.titre|markdown }}</p>
+	<p style=" word-wrap: break-word;">{{ Tarif.detail|markdown }}</p>
+	<p>{{ Tarif.prix|markdown }}
+	<img src="{{Tarif.file.url}}"  class="img-thumbnail"></p>
 </div>
 {% endfor %}
 {% endblock body %}
