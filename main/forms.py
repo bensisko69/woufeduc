@@ -32,7 +32,7 @@ class TarifForm(ModelForm):
 class TemoignageForm(ModelForm):
 	class Meta:
 		model = Temoignage
-		fields = '__all__'
+		exclude = 'validate'
 		widgets = {
 			'comment' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
