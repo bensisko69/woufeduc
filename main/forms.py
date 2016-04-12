@@ -67,3 +67,6 @@ class MentionForm(ModelForm):
 	class Meta:
 		model = Mention
 		fields = '__all__'
+		widgets = {
+			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
+		}
