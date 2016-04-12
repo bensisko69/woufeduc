@@ -66,3 +66,4 @@ class MyCustomForm(forms.Form):
 class MentionForm(ModelForm):
 	class Meta:
 		model = Mention
+		fields = '__all__'
