@@ -30,7 +30,9 @@ class ServiceAdmin(admin.ModelAdmin):
 	form = ServiceForm
 
 class MentionAdmin(admin.ModelAdmin):
-	form = MentionForm
+	model = Mention
+	widgets = {
+			'text' : Textarea(attrs={'cols': 60, 'rows': 10}),
 
 admin.site.register(Temoignage, TemoignageAdmin)
 admin.site.register(Contact, ContactAdmin)
