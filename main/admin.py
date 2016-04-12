@@ -29,8 +29,8 @@ class GalleryAdmin(admin.ModelAdmin):
 class ServiceAdmin(admin.ModelAdmin):
 	form = ServiceForm
 
-# class MentionAdmin(admin.ModelAdmin):
-	# form = MentionForm
+class MentionAdmin(admin.ModelAdmin):
+	form = MentionForm
 
 admin.site.register(Temoignage, TemoignageForm)
 admin.site.register(Contact, ContactAdmin)
@@ -40,4 +40,4 @@ admin.site.register(Partenaires, PartenairesfAdmin)
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(MyModel, MarkdownModelAdmin)
-# admin.site.register(Mention, MentionForm)
+admin.site.register(Mention, MentionForm)
