@@ -3,7 +3,7 @@ from django.forms import forms
 from django.core.mail import send_mail
 
 from .forms import ContactForm, TemoignageForm
-from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service
+from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
 
 def presentation(request):
 	obj = Presentation.objects.all
@@ -54,3 +54,7 @@ def gallery(request):
 def partenaires(request):
 	obj = Partenaires.objects.all()
 	return render(request, 'main/partenaires.html', {'obj':obj})
+
+def mention(request):
+	obj = Mention.objects.all()
+	return render(request, 'main/mention.html', {'obj':obj})
