@@ -14,6 +14,8 @@ class PresentationAdmin(admin.ModelAdmin):
 
 class TarifAdmin(admin.ModelAdmin):
 	model = Tarif
+	list_display = ('titre', 'prix', 'validate')
+	list_filter = ['validate']
 
 class TemoignageAdmin(admin.ModelAdmin):
 	model = Temoignage

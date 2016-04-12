@@ -33,7 +33,7 @@ def promenades(request):
 	return render(request, 'main/promenades.html', {'obj':obj})
 
 def tarifs(request):
-	obj = Tarif.objects.all()
+	obj = Tarif.objects.filter(validate=True)
 	return render(request, 'main/tarifs.html', {'obj':obj})
 
 def temoignage(request):

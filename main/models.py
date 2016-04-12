@@ -33,6 +33,7 @@ class Tarif(models.Model):
 	titre = models.CharField(max_length=100)
 	detail = models.TextField(max_length=600)
 	prix = models.IntegerField()
+	validate = models.BooleanField(default=False)
 
 	def __str__(self):
 		return self.titre
