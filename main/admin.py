@@ -6,7 +6,7 @@ from .models import Contact, Presentation, Tarif, Temoignage, Partenaires, Galle
 from .forms import ContactForm, PresentationForm, TarifForm, PartenairesForm, GalleryForm, ServiceForm, MentionForm
 
 class ContactAdmin(admin.ModelAdmin):
-	model = Form
+	model = Contact
 	list_display = ('nom', 'codePostal', 'telephone')
 	list_filter = ['validate']
 
