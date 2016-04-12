@@ -31,7 +31,7 @@ class Presentation(models.Model):
 
 class Tarif(models.Model):
 	titre = models.CharField(max_length=100)
-	detail = models.CharField(max_length=600)
+	detail = models.TextField(max_length=600)
 	prix = models.IntegerField()
 
 	def __str__(self):
