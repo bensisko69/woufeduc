@@ -24,8 +24,8 @@ class Contact(models.Model):
 		return self.nom
 
 class Presentation(models.Model):
-	left = models.CharField(max_length=900)
-	right = models.CharField(max_length=900)
+	left = models.TextField(max_length=900)
+	right = models.TextField(max_length=900)
 	file1 = models.FileField(upload_to='main/static/img/presentation')
 	file2 = models.FileField(upload_to='main/static/img/presentation')
 
