@@ -14,7 +14,7 @@ class Contact(models.Model):
 	email = models.EmailField(max_length=50)
 	codePostal = models.CharField(max_length=5)
 	telephone = models.CharField(max_length=10)
-	question = models.CharField(max_length=300)
+	question = models.TextField(max_length=300)
 	validate = models.BooleanField(default=False)
 
 	def __str__(self):
@@ -43,7 +43,7 @@ class Tarif(models.Model):
 class Temoignage(models.Model):
 	titre = models.CharField(max_length=100)
 	nom = models.CharField(max_length=100)
-	comment = models.CharField(max_length=600)
+	comment = models.TextField(max_length=600)
 	file = models.ImageField(upload_to='media/main/img/temoignage', blank=True, default='media/main/img/temoignage/img1.png')
 	validate = models.BooleanField(default=False)
 
@@ -67,7 +67,7 @@ class Partenaires(models.Model):
 class Gallery(models.Model):
 	nom = models.CharField(max_length=100)
 	file = models.ImageField(upload_to='media/main/img/temoignage')
-	text = models.CharField(max_length=250)
+	text = models.TextField(max_length=250)
 
 	def __str__(self):
 		return self.nom
@@ -77,8 +77,8 @@ class Gallery(models.Model):
 
 class Service(models.Model):
 	page = models.CharField(choices=NAME_PAGE, max_length=100)
-	left = models.CharField(max_length=900)
-	right = models.CharField(max_length=900)
+	left = models.TextField(max_length=900)
+	right = models.TextField(max_length=900)
 	file1 = models.FileField(upload_to='main/static/img/text')
 	file2 = models.FileField(upload_to='main/static/img/text')
 
@@ -92,4 +92,4 @@ class MyModel(models.Model):
 	content = MarkdownField()
 
 class Mention(models.Model):
-	text = models.CharField(max_length=1000)
+	text = models.TextField(max_length=1000)
