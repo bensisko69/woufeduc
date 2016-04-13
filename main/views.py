@@ -14,7 +14,7 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return render(request, 'main/acceuil.html')
+			return render(request, 'main/presentation.html')
 	else:
 		form = ContactForm()
 
@@ -42,7 +42,7 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return render(request, 'main/temoignage.html')
+			return render(request, 'main/presentation.html')
 	else:
 		form = TemoignageForm()
 	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
