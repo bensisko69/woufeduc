@@ -93,4 +93,4 @@ class MyModel(models.Model):
 	content = MarkdownField()
 
 class Mention(models.Model):
-	text = models.TextField(max_length=1000)
+	text = models.TextField(max_length=10000)
