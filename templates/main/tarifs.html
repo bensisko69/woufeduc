@@ -3,10 +3,10 @@
 {% load django_markdown %}
 {% block body %}
 {% for Tarif in obj %}
-<div class="col-xs-12" style="text-align: center;">
-	<p>{{ Tarif.titre|markdown }}</p>
-	<p style=" word-wrap: break-word;">{{ Tarif.detail|markdown }}</p>
-	<p>{{ Tarif.prix|markdown }}
+<div class="col-xs-12">
+	<p style="text-align: center;">{{ Tarif.titre|markdown }}</p>
+	<p style=" word-wrap: break-word; text-align: center">{{ Tarif.detail|markdown }}</p>
+	<p  style="text-align: center;">{{ Tarif.prix|markdown }}
 </div>
 {% endfor %}
 {% endblock body %}
