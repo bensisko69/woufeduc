@@ -13,4 +13,5 @@ urlpatterns = [
     url(r'^reeducation', views.reeducation, name='reeducation'),
     url(r'^promenades', views.promenades, name='promenades'),
     url(r'^mention', views.mention, name='mention')
+    url(r'^temoignageOk', views.temoignageOk, name='temoignageOk')
 ,]
