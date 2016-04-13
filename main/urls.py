@@ -12,5 +12,5 @@ urlpatterns = [
     url(r'^education', views.education, name='education'),
     url(r'^reeducation', views.reeducation, name='reeducation'),
     url(r'^promenades', views.promenades, name='promenades'),
-    url(r'^mention', views.mention, name='mention'),
-,]
+    url(r'^mention', views.mention, name='mention')
+    ]
