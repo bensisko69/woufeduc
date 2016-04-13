@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.forms import forms
 from django.core.mail import send_mail
 
@@ -42,7 +42,7 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return render(request, 'main/presentation.html')
+			return redirect('main/presentation.html')
 	else:
 		form = TemoignageForm()
 	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
