@@ -1,7 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.forms import forms
 from django.core.mail import send_mail
-from django.http import HttpResponseRedirect
 
 from .forms import ContactForm, TemoignageForm
 from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
@@ -15,7 +14,7 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return redirect('presentation')
+			return render(request, 'main/presentation.html')
 	else:
 		form = ContactForm()
 
@@ -43,13 +42,10 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return HttpResponseRedirect('temoignageOk.html')
+			return render(request, 'main/presentation.html')
 	else:
 		form = TemoignageForm()
 	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
-
-def temoignageOk(request):
-	return render(request, 'main/temoignageOk.html')
 
 def gallery(request):
 	obj = Gallery.objects.all()
