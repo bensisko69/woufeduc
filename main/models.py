@@ -45,7 +45,7 @@ class Temoignage(models.Model):
 	titre = models.CharField(max_length=100)
 	nom = models.CharField(max_length=100)
 	comment = models.TextField(max_length=600)
-	file = models.ImageField(upload_to='media/main/img/temoignage', default='media/main/img/temoignage/img1.png')
+	file = models.FileField(upload_to='media/main/img/temoignage', default='media/main/img/temoignage/img1.png')
 	validate = models.BooleanField(default=False)
 
 	def __str__(self):
@@ -55,7 +55,7 @@ class Temoignage(models.Model):
 		return self.nom
 
 class Partenaires(models.Model):
-	file = models.ImageField(upload_to='main/static/img/partenaires')
+	file = models.FileField(upload_to='main/static/img/partenaires')
 	lien = models.CharField(max_length=250)
 	nom = models.CharField(max_length=250)
 
@@ -67,7 +67,7 @@ class Partenaires(models.Model):
 
 class Gallery(models.Model):
 	nom = models.CharField(max_length=100)
-	file = models.ImageField(upload_to='media/main/img/temoignage')
+	file = models.FileField(upload_to='media/main/img/temoignage')
 	text = models.TextField(max_length=250)
 
 	def __str__(self):
