@@ -19,11 +19,11 @@
 		<div class="col-sm-6 col-md-4" style="height: 100%">
 			<div class="thumbnail">
 				{% if Temoignage.file %}
-					<img class="thumbnail" src={{ Temoignage.file.url }} style="max-width: 100%; display: block; margin-left: auto; margin-right: auto">
+					<img src={{ Temoignage.file.url }}>
 				{% endif %}
 				<div class="caption">
 					<h3>{{ Temoignage.titre }}</h3>
-					<p style=" word-wrap: break-word;" >{{ Temoignage.nom }}</p>
+					<!-- <p style=" word-wrap: break-word;" >{{ Temoignage.nom }}</p> -->
 					<p style=" word-wrap: break-word;" >{{ Temoignage.comment }}</p>
 				</div>
 			</div>
