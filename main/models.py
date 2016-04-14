@@ -44,7 +44,7 @@ class Tarif(models.Model):
 class Temoignage(models.Model):
 	titre = models.CharField(max_length=100)
 	nom = models.CharField(max_length=100)
-	comment = models.TextField(max_length=600)
+	commentaire = models.TextField(max_length=600)
 	file = models.ImageField(upload_to='media/main/img/temoignage')
 	validate = models.BooleanField(default=False)
 
