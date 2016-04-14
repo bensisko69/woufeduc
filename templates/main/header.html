@@ -17,7 +17,7 @@
     			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
      			Services <span class="caret"></span>
     			</a>
-				<ul class="dropdown-menu {% ifequal request.path "/service" %}active {% endifequal %}" aria-labelledby="dropdownMenu1">
+				<ul class="dropdown-menu {% ifequal request.path "/promenades.html" || "/reeducation.html" %}active {% endifequal %}" aria-labelledby="dropdownMenu1">
 					<li class="{% ifequal request.path "/education" %}active {% endifequal %}">
 						<a href="education.html">Education canine</a>
 					</li>
