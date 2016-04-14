@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.forms import forms
 from django.core.mail import send_mail
+from .forms import UploadFileForm
 
 from .forms import ContactForm, TemoignageForm
 from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
@@ -41,6 +42,7 @@ def temoignage(request):
 	if request.method == 'POST':
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
+			handle_upload_file(request.FILES['file'])
 			form.save()
 			return render(request, 'main/presentation.html')
 	else:
