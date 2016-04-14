@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.forms import forms
 from django.core.mail import send_mail
-from .forms import UploadFileForm
 
 from .forms import ContactForm, TemoignageForm
 from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
