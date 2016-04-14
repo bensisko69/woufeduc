@@ -17,14 +17,14 @@
     			<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
      			Services <span class="caret"></span>
     			</a>
-				<ul class="dropdown-menu {% ifequal request.path "/promenades.html" %}active {% endifequal %} {% ifequal request.path "/reeducation.html" %}active {% endifequal %}" aria-labelledby="dropdownMenu1">
-					<li class="{% ifequal request.path "/education" %}active {% endifequal %}">
+				<ul aria-labelledby="dropdownMenu1">
+					<li>
 						<a href="education.html">Education canine</a>
 					</li>
-					<li class="{% ifequal request.path "/reeducation" %}active {% endifequal %}">
+					<li >
 						<a href="reeducation.html">Reeducation  comportementale</a>
 					</li>
-					<li class="{% ifequal request.path "/promenades.html" %}active {% endifequal %}">
+					<li>
 						<a href="promenades.html">Promenades</a>
 					</li>
 				</ul>
@@ -32,7 +32,7 @@
 			<li class="{% ifequal request.path "/tarifs.html" %}active {% endifequal %}">
 				<a href="tarifs.html">Tarifs</a>
 			</li>
-			<li class="{% ifequal request.path "/temoignages" %}active {% endifequal %}">
+			<li class="{% ifequal request.path "/temoignages.html" %}active {% endifequal %}">
 				<a href="temoignages.html">Temoignages</a>
 			</li>
 			<li class="{% ifequal request.path "/gallery.html" %}active {% endifequal %}">
