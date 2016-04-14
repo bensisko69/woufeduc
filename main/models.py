@@ -45,7 +45,7 @@ class Temoignage(models.Model):
 	titre = models.CharField(max_length=100)
 	nom = models.CharField(max_length=100)
 	commentaire = models.TextField(max_length=600)
-	file = models.ImageField(upload_to='media/main/img/temoignage')
+	file = models.ImageField(upload_to='media/main/img/temoignage', default='media/main/img/temoignage/img1.png')
 	validate = models.BooleanField(default=False)
 
 	def __str__(self):
