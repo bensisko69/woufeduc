@@ -42,8 +42,8 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			#return render(request, 'main/presentation.html')
-			return redirect("main/presentation/html")
+			form = TemoignageForm()
+			return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
 	else:
 		form = TemoignageForm()
 	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
