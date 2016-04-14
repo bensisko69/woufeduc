@@ -1,11 +1,17 @@
 {% extends "main/base.html" %}
 {% block body %}
-<div class="col-lg-offset-4 col-xs-6">
-	<form method="post">
+{% load bootstrap3 %}
+<div class="col-lg-offset-3 col-lg-6">
+	<form method="post" class="form">
 		{% csrf_token %}
-		{{ form.as_p }}
-	<input type="submit" value="Submit" />
+		{% bootstrap_form form  %}
+		{% buttons %}
+			<button type="submit" class="btn btn-primary" />
+						{% bootstrap_icon "ok" %} Submit
+			</button>
+		{% endbuttons %}
 	</form>
+</div>
 </div>
 <div class="col-xs-12">
 <h2 style="text-align: center;">Retrouver les temoignages de nos clients</h1>
