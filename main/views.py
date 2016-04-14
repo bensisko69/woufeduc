@@ -41,7 +41,6 @@ def temoignage(request):
 	if request.method == 'POST':
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
-			handle_upload_file(request.FILES['file'])
 			form.save()
 			return render(request, 'main/presentation.html')
 	else:
