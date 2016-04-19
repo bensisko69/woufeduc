@@ -1,6 +1,10 @@
+
+p{
+    font-size: 15px;
+}
+
 body {
   font-family: Times New Roman, Time, serif;
-  /*font-size: 25px;*/
 }
 
 .btn-primary{
