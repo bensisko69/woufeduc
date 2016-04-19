@@ -16,10 +16,10 @@ def contact(request):
 		if form.is_valid():
 			form.save()
 			send_mail(
-				"Nouveaux temoignage",
-				"Un nouveau temoignage vient d'etre effectue merci de le valide",
+				"Nouvelle demande de contact",
+				"Une nouvelle demande de contact vient d'etre effectue merci d'y repondre'",
 				settings.EMAIL_HOST_USER,
-				["loicrg69@gmail.com"],
+				[settings.EMAIL_HOST_USER,],
 				fail_silently=False
 				)
 			form = ContactForm()
@@ -51,6 +51,13 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
+			send_mail(
+				"Nouveaux temoignage",
+				"Un nouveau temoignage vient d'etre effectue merci de le valide",
+				settings.EMAIL_HOST_USER,
+				[settings.EMAIL_HOST_USER,],
+				fail_silently=False
+				)
 			form = TemoignageForm()
 			return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
 	else:
