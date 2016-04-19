@@ -8,14 +8,12 @@
 	<title>Wouf'éduc</title>
 </head>
 <body style="background-color: grey; height: 100%">
-	<div class="container" style="background-color: white; ">
+	<div class="container" style="background-color: grey; ">
 		<div class="row">
 		{% load django_markdown %}
 		{% include "main/header.html" %}
-		<div style="background-color: grey">
 		{% block body %}
 		{% endblock body %}
-		</div>
 		{% include "main/footer.html" %}
 		</div>
 	</div>
