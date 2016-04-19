@@ -16,11 +16,11 @@ def contact(request):
 		if form.is_valid():
 			form.save()
 			send_mail(
-                "Nouveaux temoignage",
-                "Un nouveau temoignage vient d'etre effectue merci de le valide",
-                settings.EMAIL_HOST_USER,
-                ["loicrg69@gmail.com"]
-                )
+				"Nouveaux temoignage",
+				"Un nouveau temoignage vient d'etre effectue merci de le valide",
+				settings.EMAIL_HOST_USER,
+				["loicrg69@gmail.com"]
+				)
 			return render(request, 'main/presentation.html')
 	else:
 		form = ContactForm()
