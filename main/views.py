@@ -19,7 +19,8 @@ def contact(request):
 				"Nouveaux temoignage",
 				"Un nouveau temoignage vient d'etre effectue merci de le valide",
 				settings.EMAIL_HOST_USER,
-				["loicrg69@gmail.com"]
+				["loicrg69@gmail.com"],
+				fail_silently=False
 				)
 			return render(request, 'main/presentation.html')
 	else:
