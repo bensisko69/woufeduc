@@ -137,6 +137,7 @@ MEDIA_URL = '/media/'
 # Markdown
 MARKDOWN_EDITOR_SKIN = 'simple'
 
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5000000
 
 #email
 EMAIL_USE_TLS = True
@@ -144,4 +145,4 @@ EMAIL_HOST_USER = 'loicrg69@gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_FILE_PATH = ''
-EMAIL_HOST_PASSWORD = 'loicrg691986'
+EMAIL_HOST_PASSWORD = 'Loicrg691986'
