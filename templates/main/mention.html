@@ -1,7 +1,7 @@
 {% extends "main/base.html" %}
 {% block body %}
 {% load django_markdown %}
-<div class="row">
+<div class="row" style="margin-bottom: 20px">
 {% for Mention in obj %}
 <div class="col-xs-12">
     <p>{{ Mention.text|markdown }}</p>
