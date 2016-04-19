@@ -7,7 +7,6 @@
 </div>
 <div class="col-xs-12">
 {% for Gallery in obj %}
-	<div class="col-xs-4">
 		<div class="col-sm-6 col-md-4" style="height: 100%">
 				<div class="thumbnail">
 					<img class="img-rounded img-responsive" src= {{ Gallery.file.url }} style=" margin-left: auto; margin-right: auto; margin-top: 20px">
@@ -16,7 +15,6 @@
 					</div>
 			</div>
 		</div>
-	</div>
 {% endfor %}
 </div>
 </div>
