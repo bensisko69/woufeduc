@@ -12,8 +12,10 @@
 		<div class="row">
 		{% load django_markdown %}
 		{% include "main/header.html" %}
+		<div style="background-color: grey">
 		{% block body %}
 		{% endblock body %}
+		</div>
 		{% include "main/footer.html" %}
 		</div>
 	</div>
