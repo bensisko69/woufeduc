@@ -2,7 +2,8 @@
 {% load django_markdown %}
 {% block body %}
 {% for Presentation in obj %}
-<div class="row">
+<section>
+<div>
 	<div class="col-xs-6">
 		<p>{{ Presentation.left|markdown }}</p>
 	</div>
@@ -18,5 +19,6 @@
 		<p>{{ Presentation.right|markdown }}</p>
 	</div>
 </div>
+</section>
 {% endfor %}
 {% endblock body %}
