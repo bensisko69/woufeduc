@@ -4,5 +4,9 @@
 }
 
 .nav-pills>li.active>a{
-    background-color: rgb(232, 90, 64);
+    background-color: #CC513B;
+}
+
+a {
+    color: #000000;
 }
