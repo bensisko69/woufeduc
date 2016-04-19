@@ -14,6 +14,7 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
+			send_mail('Demande de contact', 'Une nouvelle demande de contact est disponible dans votre administration', 'loicrg69@gmail.com', ['loicrg69@gmail.com'])
 			return render(request, 'main/presentation.html')
 	else:
 		form = ContactForm()
