@@ -3,11 +3,11 @@
 {% load django_markdown %}
 <div class="row" style="margin-bottom: 20px">
 <div class="col-xs-12">
-  <h1 style="text-align: center;">Nos partenaires</h1>
+  <h2 style="text-align: center;">Nos partenaires</h2>
 </div>
 {% for partenaire in obj %}
 <div class="col-xs-2">
-	<p style="color: #E85A40">{{ partenaire.nom|markdown }} </p>
+	<p> {{ partenaire.nom|markdown }} </p>
 	<a href= {{ partenaire.lien }}>
 		<img src= {{ partenaire.file.url }} style="max-width: 100%; display: block; margin-left: auto; margin-right: auto">
 	</a>
