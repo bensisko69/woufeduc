@@ -2,6 +2,7 @@
 {% load staticfiles %}
 {% load django_markdown %}
 {% block body %}
+<div class="row">
 {% for Tarif in obj %}
 <div class="col-xs-6">
 	<p>{{ Tarif.titre|markdown }}</p>
@@ -9,4 +10,5 @@
 	<p>{{ Tarif.prix|markdown }}
 </div>
 {% endfor %}
+</p>
 {% endblock body %}

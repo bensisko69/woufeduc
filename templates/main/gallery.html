@@ -1,5 +1,6 @@
 {% extends "main/base.html" %}
 {% load django_markdown %}
+<div class="row">
 {% block body %}
 <div class="col-xs-12">
   <h1 style="text-align: center;">Gallery</h1>
@@ -11,5 +12,6 @@
 			<p style=" word-wrap: break-word;">{{ Gallery.text|markdown }}</p>
 	</div>
 {% endfor %}
+</div>
 </div>
 {% endblock body %}
