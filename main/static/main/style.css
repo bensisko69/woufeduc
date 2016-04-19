@@ -3,11 +3,6 @@
     border-color: hsl(9, 59%, 50%);
 }
 
-.btn-primary:focus{
-    background-color: rgb(232, 90, 64);
-    border-color: hsl(9, 59%, 50%);
-}
-
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     background-color: #CC513B;
 }
