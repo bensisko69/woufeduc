@@ -22,7 +22,8 @@ def contact(request):
 				["loicrg69@gmail.com"],
 				fail_silently=False
 				)
-			return render(request, 'main/presentation.html')
+			form = ContactForm()
+			return render(request, 'main/contact.html', {'form':form})
 	else:
 		form = ContactForm()
 
