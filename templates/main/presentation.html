@@ -2,7 +2,7 @@
 {% load django_markdown %}
 {% block body %}
 {% for Presentation in obj %}
-<div class="col-xs-12">
+<div>
 	<div class="col-xs-6">
 		<p>{{ Presentation.left|markdown }}</p>
 	</div>
