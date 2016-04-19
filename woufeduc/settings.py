@@ -140,7 +140,6 @@ MARKDOWN_EDITOR_SKIN = 'simple'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 5000000
 
 #email
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'loicrg69@gmail.com'
 EMAIL_PORT = 587
