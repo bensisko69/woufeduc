@@ -17,9 +17,16 @@ def contact(request):
 			form.save()
 			send_mail(
 				"Nouvelle demande de contact",
-				"Une nouvelle demande de contact vient d'etre effectue merci d'y repondre'",
+				"Une nouvelle demande de contact vient d'être effectue merci d'y répondre",
 				settings.EMAIL_HOST_USER,
 				[settings.EMAIL_HOST_USER,],
+				fail_silently=False
+				)
+			send_mail(
+				"Votre demande de contact",
+				"Nous répondrons à votre message dans un délai de 24h maximumNous repondrons a votre message dans un delai de 24h maximum",
+				settings.EMAIL_HOST_USER,
+				[request.POST['email'],],
 				fail_silently=False
 				)
 			form = ContactForm()
@@ -52,8 +59,8 @@ def temoignage(request):
 		if form.is_valid():
 			form.save()
 			send_mail(
-				"Nouveaux temoignage",
-				"Un nouveau temoignage vient d'etre effectue merci de le valide",
+				"Nouveau temoignage",
+				"Un nouveau témoignage vient d'être effectue merci de le valide",
 				settings.EMAIL_HOST_USER,
 				[settings.EMAIL_HOST_USER,],
 				fail_silently=False
