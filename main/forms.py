@@ -15,7 +15,7 @@ class ContactForm(ModelForm):
 class TemoignageForm(ModelForm):
 	class Meta:
 		model = Temoignage
-		exclude = ('validate', 'file')
+		exclude = ('validate',)
 		widgets = {
 			'comment' : Textarea(attrs={'cols': 60, 'rows': 10}),
 		}
