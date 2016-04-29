@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.forms import forms
 from django.core.mail import send_mail
+from django.conf import settings
 
 from .forms import ContactForm, TemoignageForm
 from .models import Presentation, Tarif, Temoignage, Partenaires, Gallery, Service, Mention
@@ -14,7 +15,22 @@ def contact(request):
 		form = ContactForm(request.POST)
 		if form.is_valid():
 			form.save()
-			return render(request, 'main/presentation.html')
+			send_mail(
+				"Nouvelle demande de contact",
+				"Une nouvelle demande de contact vient d'être effectue merci d'y répondre",
+				settings.EMAIL_HOST_USER,
+				[settings.EMAIL_HOST_USER,],
+				fail_silently=False
+				)
+			send_mail(
+				"Votre demande de contact",
+				"Nous répondrons à votre message dans un délai de 24h maximumNous repondrons a votre message dans un delai de 24h maximum",
+				settings.EMAIL_HOST_USER,
+				[request.POST['email'],],
+				fail_silently=False
+				)
+			form = ContactForm()
+			return render(request, 'main/contact.html', {'form':form})
 	else:
 		form = ContactForm()
 
@@ -42,7 +58,15 @@ def temoignage(request):
 		form = TemoignageForm(request.POST, request.FILES)
 		if form.is_valid():
 			form.save()
-			return render(request, 'main/presentation.html')
+			send_mail(
+				"Nouveau temoignage",
+				"Un nouveau témoignage vient d'être effectue merci de le valide",
+				settings.EMAIL_HOST_USER,
+				[settings.EMAIL_HOST_USER,],
+				fail_silently=False
+				)
+			form = TemoignageForm()
+			return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})
 	else:
 		form = TemoignageForm()
 	return render(request, 'main/temoignage.html', {'obj':obj, 'form':form})

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.flatpages',
     'django_markdown',
+    'bootstrap3',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -53,6 +54,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
+    "django.core.files.uploadhandler.MemoryFileUploadHandler",
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler"
 ]
 
 ROOT_URLCONF = 'woufeduc.urls'
@@ -126,10 +129,21 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = (
-        os.path.join(os.path.dirname(BASE_DIR), "static")
+        os.path.join(BASE_DIR, "static")
     )
 
 MEDIA_URL = '/media/'
 
 # Markdown
 MARKDOWN_EDITOR_SKIN = 'simple'
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5000000
+
+#email
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'loicrg69@gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+SERVER_EMAIL = 'loicrg69@gmail.com'
+EMAIL_FILE_PATH = ''
+EMAIL_HOST_PASSWORD = 'Loicrg691986'
